@@ -59,16 +59,16 @@ class TaggedLineSentence(object):
 
 
 log.info('source load')
-train_source = {'train-neg.txt':'TRAIN_NEG', 'train-pos.txt':'TRAIN_POS'}
+""" train_source = {'train-neg.txt':'TRAIN_NEG', 'train-pos.txt':'TRAIN_POS'}"""
 test_source = {'test-neg.txt':'TEST_NEG', 'test-pos.txt':'TEST_POS'}
 
 log.info('TaggedDocument')
-train_sentences = TaggedLineSentence(train_source)
+""" train_sentences = TaggedLineSentence(train_source)"""
 test_sentences = TaggedLineSentence(test_source)
 
 
 log.info('D2V')
-model = Doc2Vec(min_count=1, window=10, size=150, sample=1e-4, negative=5, workers=7,iter=50)
+""" model = Doc2Vec(min_count=1, window=10, size=150, sample=1e-4, negative=5, workers=7,iter=50)
 model.build_vocab(train_sentences.to_array())
 
 log.info('Epoch')
@@ -76,8 +76,8 @@ log.info('Epoch')
 # log.info('EPOCH: {}'.format(epoch))
 model.train(train_sentences.sentences_perm(),total_examples=model.corpus_count,epochs=model.iter)
 
-log.info('Model Save')
-model.save('./imdb.d2v')
+log.info('Model Save') """
+""" model.save('./imdb.d2v')"""
 model = Doc2Vec.load('./imdb.d2v')
 
 log.info('Sentiment')
